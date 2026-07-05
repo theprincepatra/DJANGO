@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+    --bg-main: #0b0f19;
+    --bg-card: rgba(255, 255, 255, 0.05);
+    --border: rgba(255, 255, 255, 0.08);
+    --primary: #4f46e5;
+    --primary-hover: #6366f1;
+    --accent: #22d3ee;
+    --text-main: #e5e7eb;
+    --text-muted: #9ca3af;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at top, #111827, #020617);
+    color: var(--text-main);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+}
+
+h1 {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Links */
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: 0.3s;
+}
+a:hover {
+    color: #67e8f9;
+}
+
+/* Header */
+#header {
+    padding: 15px 100px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header .logo {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+#header ul.menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+#header ul.menu li a {
+    color: var(--text-main);
+    position: relative;
+}
+
+#header ul.menu li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--primary);
+    transition: 0.3s;
+}
+
+#header ul.menu li a:hover::after {
+    width: 100%;
+}
+
+/* Content */
+#content {
+    padding: 40px 100px;
+}
+
+/* Forms */
+form {
+    background: var(--bg-card);
+    backdrop-filter: blur(20px);
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    max-width: 500px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+}
+
+/* Inputs */
+label {
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+input, textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.02);
+    color: var(--text-main);
+    transition: 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 10px rgba(79,70,229,0.5);
+}
+
+/* Buttons */
+input[type=submit], a.button {
+    display: inline-block;
+    background: linear-gradient(135deg, #4f46e5, #22d3ee);
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(79,70,229,0.4);
+}
+
+input[type=submit]:hover, a.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79,70,229,0.7);
+}
+
+/* Messages */
+ul.messages {
+    margin: 20px 100px;
+    padding: 0;
+}
+
+ul.messages li {
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    backdrop-filter: blur(10px);
+}
+
+ul.messages li.success { background: rgba(34,197,94,0.2); }
+ul.messages li.error { background: rgba(239,68,68,0.2); }
+ul.messages li.warning { background: rgba(245,158,11,0.2); }
+ul.messages li.info { background: rgba(59,130,246,0.2); }
+
+/* Profile Image */
+img.user-detail {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 3px solid var(--border);
+}
+
+/* Cards */
+#image-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+#image-list .image {
+    width: 220px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    transition: 0.3s;
+}
+
+#image-list .image:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+
+#image-list img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* People */
+#people-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+#people-list .user {
+    text-align: center;
+}
+
+#people-list img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    border: 2px solid var(--border);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #header, #content {
+        padding: 20px;
+    }
+
+    form {
+        width: 100%;
+    }
+}

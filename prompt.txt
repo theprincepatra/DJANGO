@@ -1,0 +1,18 @@
+pip install -r requirements.txt
+
+python -m venv venv
+venv\Scripts\activate
+
+pip install django-extensions social-auth-app-django python-decouple
+
+create .env file: 
+GOOGLE_OAUTH2_KEY=abc123
+GOOGLE_OAUTH2_SECRET=xyz456
+SECRET_KEY=django-insecure-key
+DEBUG=True
+
+python manage.py migrate
+
+python manage.py createsuperuser
+
+python manage.py runserver
